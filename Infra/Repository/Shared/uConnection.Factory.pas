@@ -17,18 +17,15 @@ implementation
 { TConnectionFactory }
 
 uses
-  uZLConnection.FireDAC;
+  uZLConnection.FireDAC,
+  uMain;
 
 class function TConnectionFactory.Make: IZLConnection;
+var
+  lDatabase, lServer, lUserName, lPassword, lDriverID, lVendorLib: String;
 begin
-  Result := TZLConnectionFireDAC.Make(
-    'postgres',
-    'localhost',
-    'postgres',
-    'secret',
-    'PG',
-    'C:\Program Files\PostgreSQL\15\pgAdmin 4\bin\libpq.dll'
-  );
+  TMain.ConnectionParams(lDatabase, lServer, lUserName, lPassword, lDriverID, lVendorLib);
+  Result := TZLConnectionFireDAC.Make(lDatabase, lServer, lUserName, lPassword, lDriverID, lVendorLib);
 end;
 
 end.

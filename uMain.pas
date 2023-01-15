@@ -9,6 +9,7 @@ Type
     class procedure SetMiddlewares;
     class procedure SetReportMemoryLeak;
     class procedure SetRoutes;
+    class procedure ConnectionParams(var ADatabase, AServer, AUserName, APassword, ADriverID, AVendorLib: String);
   end;
 
 implementation
@@ -20,7 +21,13 @@ uses
   uPessoa.Controller;
 
 const
-  SERVER_PORT = 9876;
+  SERVER_PORT     = 9876;
+  CONN_DATABASE   = 'postgres';
+  CONN_SERVER     = 'localhost';
+  CONN_USERNAME   = 'postgres';
+  CONN_PASSWORD   = 'secret';
+  CONN_DRIVER_ID  = 'PG';
+  CONN_VENDOR_LIB = 'C:\Program Files\PostgreSQL\15\pgAdmin 4\bin\libpq.dll';
 
 { TMain }
 
@@ -30,6 +37,16 @@ begin
   SetMiddlewares;
   SetRoutes;
   RunServer;
+end;
+
+class procedure TMain.ConnectionParams(var ADatabase, AServer, AUserName, APassword, ADriverID, AVendorLib: String);
+begin
+  ADatabase  := CONN_DATABASE;
+  AServer    := CONN_SERVER;
+  AUserName  := CONN_USERNAME;
+  APassword  := CONN_PASSWORD;
+  ADriverID  := CONN_DRIVER_ID;
+  AVendorLib := CONN_VENDOR_LIB;
 end;
 
 class procedure TMain.RunServer;
