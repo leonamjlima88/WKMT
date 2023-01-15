@@ -20,3 +20,7 @@ Configurar credenciais para acesso ao banco de dados no arquivo uMain.pas na se�
   
   CONN_VENDOR_LIB = 'C:\Program Files\PostgreSQL\15\pgAdmin 4\bin\libpq.dll';
   
+  
+### ENDPOINTS PARA INSOMNIA
+3 formatos para importação endpoints no insomnia (https://insomnia.rest/download)
+  
