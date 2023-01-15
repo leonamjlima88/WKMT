@@ -22,5 +22,7 @@ Configurar credenciais para acesso ao banco de dados no arquivo uMain.pas na se�
   
   
 ### ENDPOINTS PARA INSOMNIA
-3 formatos para importação endpoints no insomnia (https://insomnia.rest/download)
+3 formatos para importação de endpoints para o insomnia (https://insomnia.rest/download)
+
+Arquivos estão na pasta raiz do projeto/WKMT_ENDPOINTS
   
